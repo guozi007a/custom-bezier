@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.app .wrap {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+}
+
+.wrap canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap .dot {
+    position: absolute;
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    background-color: #e0ce22;
+    border-radius: 3px;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+    top: -3px;
+}
+.dot4,
+.dot5 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.dot6,
+.dot7,
+.dot8 {
+    bottom: -3px;
+}
+.dot1,
+.dot4,
+.dot6 {
+    left: -3px;
+}
+.dot2,
+.dot7 {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.dot3,
+.dot5,
+.dot8 {
+    right: -3px;
+}
+.dot1,
+.dot8 {
+    cursor: nw-resize;
+}
+.dot3,
+.dot6 {
+    cursor: nesw-resize;
+}
+.dot2,
+.dot7 {
+    cursor: ns-resize;
+}
+.dot4,
+.dot5 {
+    cursor: ew-resize;
+}
+
+.positions {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: goldenrod;
+}
