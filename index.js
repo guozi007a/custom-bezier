@@ -85,8 +85,8 @@ $(function ($) {
 
     // 监听鼠标坐标
     $('#canvas').mousemove(function (e) {
-        pointerX = e.pageX - wrapX
-        pointerY = e.pageY - wrapY
+        pointerX = Math.floor(e.pageX - wrapX)
+        pointerY = Math.floor(e.pageY - wrapY)
     })
 
     // 检查鼠标位置处于哪一个点
@@ -124,8 +124,8 @@ $(function ($) {
 
     // 鼠标按下时的操作
     $('#canvas').mousedown(function (e) {
-        pointerX = e.pageX - wrapX
-        pointerY = e.pageY - wrapY
+        pointerX = Math.floor(e.pageX - wrapX)
+        pointerY = Math.floor(e.pageY - wrapY)
         checkPointerPosition(pointerX, pointerY)
         if (pointerPosition) {
             $(this).css('cursor', 'move')
@@ -135,8 +135,8 @@ $(function ($) {
 
     // 鼠标拖动点位时的操作
     $('#canvas').on('mousemove', function (e) {
-        pointerX = e.pageX - wrapX
-        pointerY = e.pageY - wrapY
+        pointerX = Math.floor(e.pageX - wrapX)
+        pointerY = Math.floor(e.pageY - wrapY)
 
         if (isDragging && pointerPosition) {
             // 清空画布
