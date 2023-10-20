@@ -122,6 +122,30 @@ $(function ($) {
         pointerPosition = 0
     }
 
+    // 更新点位坐标
+    const updatePoints = (px, py) => {
+        switch (pointerPosition) {
+            case 1:
+                sx = px
+                sy = py
+                break
+            case 2:
+                cp1x = px
+                cp1y = py
+                break
+            case 3:
+                cp2x = px
+                cp2y = py
+                break
+            case 4:
+                x = px
+                y = py
+                break
+            default:
+                break
+        }
+    }
+
     // 鼠标按下时的操作
     $('#canvas').mousedown(function (e) {
         pointerX = Math.floor(e.pageX - wrapX)
@@ -141,27 +165,7 @@ $(function ($) {
         if (isDragging && pointerPosition) {
             // 清空画布
             ctx.clearRect(0, 0, canvas.width, canvas.height)
-            // 更新点位坐标
-            switch (pointerPosition) {
-                case 1:
-                    sx = pointerX
-                    sy = pointerY
-                    break
-                case 2:
-                    cp1x = pointerX
-                    cp1y = pointerY
-                    break
-                case 3:
-                    cp2x = pointerX
-                    cp2y = pointerY
-                    break
-                case 4:
-                    x = pointerX
-                    y = pointerY
-                    break
-                default:
-                    break
-            }
+            updatePoints(pointerX, pointerY)
 
             initCanvas()
         }
