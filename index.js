@@ -1,6 +1,5 @@
 $(function ($) {
     const wrap = $('.wrap')
-    const dots = $('.dot')
     const p = $('.positions span')
     const canvas = $('#canvas')[0]
     const ctx = canvas.getContext('2d')
